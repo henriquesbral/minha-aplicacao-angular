@@ -1,0 +1,57 @@
+<div class="container main-container">
+    <h3>Interpolation</h3>
+
+    <!-- <p>O numero de cliques é {{ contadorClique }}</p> -->
+    <!--Podemos usar o ngClass para modificar a classe e mudar seu estilo por exemplo...-->
+    <p [ngClass]="{
+        'text-secondary' : contadorClique < 3,
+        'text-success': contadorClique >=3,
+        'text-warning': contadorClique >=5,
+        'text-danger': contadorClique >=9}">O numero de cliques é {{ contadorClique }}</p>
+
+    <br>
+    <br>
+    <br>
+
+    <h3>Property Binding</h3>
+    <button class="btn btn-info" [disabled]="contadorClique >= 10">Info</button><br><br>
+    <img [src]="urlImagem" height="50px" width="50px">
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <h3>Event Binding</h3>
+    <div class="btn-group">
+        <button class="btn btn-success" (click)='adicionarClique()'>Clique-me</button>
+        <button class="btn btn-danger" (click)='zerarContador()' [disabled]="contadorClique < 10">Zerar Cliques</button>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <h3>Two-Way Binding - Efeito</h3>
+    <!--Toda vez que eu tirar o dedo da tecla-->
+    <input class="col-md-6 form-control" type="text" (keyup)='keyUp($event)' placeholder="Digite o seu nome">
+    <br><br>
+    <label>Seu nome é: {{ nome }}</label>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <h3>Two-Way Binding - Modelo</h3>
+    <!--ngModel = modelo ngModelChange = quando mudar eu faço algo-->
+    <!-- <input type="text" [ngModel]="nomeNgModel" (ngModelChange)='nomeNgModel = $event' placeholder="Digite o seu nome">
+    <br><br>
+    <label>Seu nome é: {{ nomeNgModel }}</label> -->
+
+    <!--O modelo mais usado e o abaixo-->
+    <input type="text" [(ngModel)]="nomeNgModel" placeholder="Digite o seu nome">
+    <br><br>
+    <label [ngClass]='nomeNgModel'>Seu nome é: {{ nomeNgModel }}</label>
+</div>
