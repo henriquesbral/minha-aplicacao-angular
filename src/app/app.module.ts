@@ -15,6 +15,9 @@ import { DataBindingComponent } from './demos/data-binding/data-binding.componen
 import { FormsModule } from '@angular/forms';
 import { ProdutoService } from './produtos/produtos.service';
 import { ListaProdutosComponent } from './produtos/lista-produtos/lista-produtos.component';
+import { CarrinhoComponent } from './carrinho/carrinho/carrinho.component';
+import { PagamentoComponent } from './pagamento/pagamento/pagamento.component';
+import { ProdutoDetalheComponent } from './produtos/produto-detalhe/produto-detalhe.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,10 @@ import { ListaProdutosComponent } from './produtos/lista-produtos/lista-produtos
     SobreComponent,
     ContatoComponent,
     DataBindingComponent,
-    ListaProdutosComponent
+    ListaProdutosComponent,
+    CarrinhoComponent,
+    PagamentoComponent,
+    ProdutoDetalheComponent
   ],
   imports: [
     BrowserModule,
