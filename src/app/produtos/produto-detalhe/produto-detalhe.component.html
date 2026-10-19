@@ -1,1 +1,58 @@
-<p>produto-detalhe works!</p>
+<div class="container produto-detalhe my-4">
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <div class="row">
+
+                <!-- Imagem do produto -->
+                <div class="col-md-5 text-center mb-3">
+                    <img src="https://placehold.co/400x400?text=Produto" class="img-fluid rounded"
+                        alt="Imagem do produto">
+                </div>
+
+                <!-- Informações do produto -->
+                <div class="col-md-7">
+                    <h2 class="mb-3">Nome do Produto</h2>
+
+                    <p class="text-muted">
+                        Código: PROD-001
+                    </p>
+
+                    <p>
+                        Descrição do produto com informações sobre suas
+                        características, benefícios e especificações.
+                    </p>
+
+                    <h3 class="text-success mb-3">
+                        R$ 199,90
+                    </h3>
+
+                    <p>
+                        <span class="badge bg-success">Em estoque</span>
+                    </p>
+
+                    <!-- Quantidade -->
+                    <div class="mb-3">
+                        <label for="quantidade" class="form-label">
+                            Quantidade
+                        </label>
+
+                        <input type="number" id="quantidade" class="form-control" value="1" min="1"
+                            style="max-width: 100px;">
+                    </div>
+
+                    <!-- Botões -->
+                    <div class="d-flex gap-2 flex-wrap">
+                        <button class="btn btn-primary">
+                            Adicionar ao carrinho
+                        </button>
+
+                        <button class="btn btn-outline-secondary">
+                            Voltar aos produtos
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
