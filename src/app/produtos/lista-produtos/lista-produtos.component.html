@@ -9,9 +9,9 @@
                     </div>
                 </a>
                 <div class="card-body">
-                    <h4 class="card-title">{{ produtos.nome }}</h4>
+                    <h4 class="card-title">{{ produtos.nome | titlecase}}</h4> <!--usando o pipe titlecase-->
                     <p>Por apenas:</p>
-                    <div><h4>R$ {{ produtos.valor }}</h4></div>
+                    <div><h4> {{ produtos.valor | currency:'BRL':symbol:'1.2-2':'pt'}}</h4></div> <!--usando o pipe de moeda-->
                 </div>
                 <div class="card-footer">
                     <a class="btn btn-primary" [routerLink]="['/carrinho', produtos.id]"> <!-- Implementar essa parte-->
