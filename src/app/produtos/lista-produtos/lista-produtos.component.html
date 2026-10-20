@@ -18,12 +18,12 @@
                 </div>
 
                 <div *ngIf="produtos.promocao" class="card-body">De: <!--somente vai exibir produtos que promocao for igual a false-->
-                    <small><del>{{ produtos.valor | currency:'BRL':symbol:'1.2-2':'pt' }}</del></small>
-                    Por: {{ produtos.valorPromo | currency:'BRL':symbol:'1.2-2':'pt' }} <!--usando o pipe de moeda-->
+                    <small><del>{{ produtos.valor | currency:'BRL':true:'1.2-2':'pt' }}</del></small>
+                    Por: {{ produtos.valorPromo | currency:'BRL':true:'1.2-2':'pt' }} <!--usando o pipe de moeda-->
                 </div>
 
                 <div *ngIf="!produtos.promocao" class="card-body"> <!--somente vai exibir produtos que promocao for igual a false-->
-                    <div><h4> {{ produtos.valor | currency:'BRL':symbol:'1.2-2':'pt'}}</h4></div> <!--usando o pipe de moeda-->
+                    <div><h4> {{ produtos.valor | currency:'BRL':true:'1.2-2':'pt'}}</h4></div> <!--usando o pipe de moeda-->
                 </div>
 
                 <div class="card-footer">
