@@ -8,11 +8,24 @@
                         <img src="/assets/{{ produtos.imagem }}" height="164px" width="253px" alt="">
                     </div>
                 </a>
-                <div class="card-body">
-                    <h4 class="card-title">{{ produtos.nome | titlecase}}</h4> <!--usando o pipe titlecase-->
-                    <p>Por apenas:</p>
+                <h4 class="card-title">{{ produtos.nome | titlecase}}</h4> <!--usando o pipe titlecase-->
+
+                <!-- <p>Por apenas:</p> -->
+
+                <div [ngSwitch]="produtos.promocao">
+                    <p *ngSwitchCase="true" [ngClass]="'text-danger'">Promoção !</p>
+                    <p *ngSwitchCase="false">Por apenas:</p>
+                </div>
+
+                <div *ngIf="produtos.promocao" class="card-body">De: <!--somente vai exibir produtos que promocao for igual a false-->
+                    <small><del>{{ produtos.valor | currency:'BRL':symbol:'1.2-2':'pt' }}</del></small>
+                    Por: {{ produtos.valorPromo | currency:'BRL':symbol:'1.2-2':'pt' }} <!--usando o pipe de moeda-->
+                </div>
+
+                <div *ngIf="!produtos.promocao" class="card-body"> <!--somente vai exibir produtos que promocao for igual a false-->
                     <div><h4> {{ produtos.valor | currency:'BRL':symbol:'1.2-2':'pt'}}</h4></div> <!--usando o pipe de moeda-->
                 </div>
+
                 <div class="card-footer">
                     <a class="btn btn-primary" [routerLink]="['/carrinho', produtos.id]"> <!-- Implementar essa parte-->
                         <span class="fa fa-shopping-cart"></span> Comprar
